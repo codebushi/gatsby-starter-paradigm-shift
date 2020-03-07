@@ -1,4 +1,14 @@
 import React from 'react'
+import full01 from '../assets/img/gallery/fulls/01.jpg'
+import full02 from '../assets/img/gallery/fulls/02.jpg'
+import full03 from '../assets/img/gallery/fulls/03.jpg'
+import full04 from '../assets/img/gallery/fulls/04.jpg'
+import full05 from '../assets/img/gallery/fulls/05.jpg'
+import full06 from '../assets/img/gallery/fulls/06.jpg'
+import full07 from '../assets/img/gallery/fulls/07.jpg'
+import full08 from '../assets/img/gallery/fulls/08.jpg'
+import full09 from '../assets/img/gallery/fulls/09.jpg'
+import full10 from '../assets/img/gallery/fulls/10.jpg'
 import thumb01 from '../assets/img/gallery/thumbs/01.jpg'
 import thumb02 from '../assets/img/gallery/thumbs/02.jpg'
 import thumb03 from '../assets/img/gallery/thumbs/03.jpg'
@@ -11,7 +21,91 @@ import thumb09 from '../assets/img/gallery/thumbs/09.jpg'
 import thumb10 from '../assets/img/gallery/thumbs/10.jpg'
 import pic01 from '../assets/img/pic01.jpg'
 import pic02 from '../assets/img/pic02.jpg'
+import Gallery from '../components/Gallery'
 import Layout from '../components/layout'
+
+const images01 = [
+  {
+    id: '1',
+    source: full01,
+    thumbnail: thumb01,
+    caption: 'Photo 1',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+    landscape: true,
+  },
+  {
+    id: '2',
+    source: full02,
+    thumbnail: thumb02,
+    caption: 'Photo 2',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+  },
+  {
+    id: '3',
+    source: full03,
+    thumbnail: thumb03,
+    caption: 'Photo 3',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+  },
+  {
+    id: '4',
+    source: full04,
+    thumbnail: thumb04,
+    caption: 'Photo 4',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+    landscape: true,
+  },
+]
+
+const images02 = [
+  {
+    id: '5',
+    source: full05,
+    thumbnail: thumb05,
+    caption: 'Photo 5',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+  },
+  {
+    id: '6',
+    source: full06,
+    thumbnail: thumb06,
+    caption: 'Photo 6',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+  },
+  {
+    id: '7',
+    source: full07,
+    thumbnail: thumb07,
+    caption: 'Photo 7',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+    landscape: true,
+  },
+]
+
+const images03 = [
+  {
+    id: '8',
+    source: full08,
+    thumbnail: thumb08,
+    caption: 'Photo 8',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+  },
+  {
+    id: '9',
+    source: full09,
+    thumbnail: thumb09,
+    caption: 'Photo 9',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+  },
+  {
+    id: '10',
+    source: full10,
+    thumbnail: thumb10,
+    caption: 'Photo 10',
+    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+    landscape: true,
+  },
+]
 
 const IndexPage = () => (
   <Layout>
@@ -105,20 +199,24 @@ const IndexPage = () => (
             </p>
           </header>
           <div className="content">
-            <div className="gallery">
-              <a href="images/gallery/fulls/01.jpg" className="landscape">
-                <img src={thumb01} alt="" />
-              </a>
-              <a href="images/gallery/fulls/02.jpg">
-                <img src={thumb02} alt="" />
-              </a>
-              <a href="images/gallery/fulls/03.jpg">
-                <img src={thumb03} alt="" />
-              </a>
-              <a href="images/gallery/fulls/04.jpg" className="landscape">
-                <img src={thumb04} alt="" />
-              </a>
-            </div>
+            <Gallery
+              images={images01.map(
+                ({
+                  id,
+                  source,
+                  thumbnail,
+                  caption,
+                  description,
+                  landscape,
+                }) => ({
+                  source,
+                  thumbnail,
+                  caption,
+                  description,
+                  landscape,
+                })
+              )}
+            />
           </div>
         </section>
 
@@ -133,17 +231,24 @@ const IndexPage = () => (
             </p>
           </header>
           <div className="content">
-            <div className="gallery">
-              <a href="images/gallery/fulls/05.jpg" className="landscape">
-                <img src={thumb05} alt="" />
-              </a>
-              <a href="images/gallery/fulls/06.jpg">
-                <img src={thumb06} alt="" />
-              </a>
-              <a href="images/gallery/fulls/07.jpg">
-                <img src={thumb07} alt="" />
-              </a>
-            </div>
+            <Gallery
+              images={images02.map(
+                ({
+                  id,
+                  source,
+                  thumbnail,
+                  caption,
+                  description,
+                  landscape,
+                }) => ({
+                  source,
+                  thumbnail,
+                  caption,
+                  description,
+                  landscape,
+                })
+              )}
+            />
           </div>
         </section>
 
@@ -158,17 +263,24 @@ const IndexPage = () => (
             </p>
           </header>
           <div className="content">
-            <div className="gallery">
-              <a href="images/gallery/fulls/08.jpg" className="portrait">
-                <img src={thumb08} alt="" />
-              </a>
-              <a href="images/gallery/fulls/09.jpg" className="portrait">
-                <img src={thumb09} alt="" />
-              </a>
-              <a href="images/gallery/fulls/10.jpg" className="landscape">
-                <img src={thumb10} alt="" />
-              </a>
-            </div>
+            <Gallery
+              images={images03.map(
+                ({
+                  id,
+                  source,
+                  thumbnail,
+                  caption,
+                  description,
+                  landscape,
+                }) => ({
+                  source,
+                  thumbnail,
+                  caption,
+                  description,
+                  landscape,
+                })
+              )}
+            />
           </div>
         </section>
       </div>
@@ -231,7 +343,7 @@ const IndexPage = () => (
               <input
                 type="submit"
                 value="Send Message"
-                className="button primary"
+                className="button large primary"
               />
             </li>
           </ul>
